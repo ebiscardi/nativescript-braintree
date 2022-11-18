@@ -31,8 +31,9 @@ class DropInListener extends java.lang.Object implements com.braintreepayments.a
     }
 
     onDropInSuccess(dropInResult) {
-        const nonce = dropInResult.getPaymentMethodNonce();
-        this.onSuccessCallback(dropInResult.getPaymentMethodNonce().getString())
+        const nonce = dropInResult.getPaymentMethodNonce().getString();
+        console.log("OnDropInSuccess: nonce is " + nonce)
+        this.onSuccessCallback(nonce)
     }
 
     onDropInFailure(error) {
