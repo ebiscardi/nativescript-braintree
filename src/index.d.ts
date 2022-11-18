@@ -3,7 +3,7 @@ import { Observable } from "@nativescript/core";
 export declare function setupBraintreeAppDeligate(urlScheme: any): void;
 
 export declare class Braintree extends Observable {
-  constructor();
+  constructor(clientTokenProvider?: Function);
   output: {
     'status': string;
     'msg': string;
@@ -11,7 +11,13 @@ export declare class Braintree extends Observable {
     'paymentMethodType': string;
     'deviceInfo': string;
   };
+  setCallbackFunctions(
+    onSuccessCallback: Function,
+    onErrorCallback: Function,
+    onCancelCallback: Function
+  ): void;
   startPayment(token: any, options: BrainTreeOptions): void;
+  setAndroidListener(listener)
   private callIntent(intent);
   private handleResults(requestCode, resultCode, data);
 }
