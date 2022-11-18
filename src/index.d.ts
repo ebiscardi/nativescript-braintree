@@ -16,7 +16,9 @@ export declare class Braintree extends Observable {
     onErrorCallback: Function,
     onCancelCallback: Function
   ): void;
-  startPayment(options: BrainTreeOptions): void;
+  startPayment(token: any, options: BrainTreeOptions): void;
+  //use this instead of startPayment with Android dropin >= 6
+  startDropIn(options: BrainTreeOptions): void;
   setAndroidListener(listener)
   private callIntent(intent);
   private handleResults(requestCode, resultCode, data);

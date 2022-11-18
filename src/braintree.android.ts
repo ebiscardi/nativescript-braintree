@@ -107,7 +107,7 @@ export class Braintree extends Observable {
         this.dropInClient.setListener(dropInListener)
     }
 
-    public startPayment(options: BrainTreeOptions) {
+    public startDropIn(options: BrainTreeOptions) {
 
         let t = this;
         let dropInRequest = new DropInRequest();
