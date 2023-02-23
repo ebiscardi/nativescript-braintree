@@ -42,7 +42,7 @@ class DropInListener extends java.lang.Object implements com.braintreepayments.a
             this.onCancelCallback()
         } else {
             console.log("Payment error: " + error)
-            this.onErrorCallback()
+            this.onErrorCallback(error)
         }
     }
 }
